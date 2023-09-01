@@ -1,0 +1,10 @@
+{
+  "name": "rust-daisuki-lib",
+  "version": "1.0.0",
+  "description": "Rust saikyo!",
+  "main": "./index.js",
+  "scripts": {},
+  "author": "yuimarudev",
+  "license": "MIT",
+  "type": "module"
+}
