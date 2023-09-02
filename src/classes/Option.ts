@@ -38,7 +38,7 @@ export class Option<T> {
 
   *[Symbol.iterator]() {
     const { tag, value } = this.inner;
-    
+
     if (tag === "some") {
       yield Some(value);
     }
@@ -63,7 +63,7 @@ export class Option<T> {
   [Symbol.for("nodejs.util.inspect.custom")](
     _depth: number,
     _options: Object,
-    inspect: (input: any) => string
+    inspect: (input: any) => string,
   ) {
     const { tag, value } = this.inner;
 

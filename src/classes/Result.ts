@@ -130,7 +130,7 @@ export class Result<T, E> {
   [Symbol.for("nodejs.util.inspect.custom")](
     _depth: number,
     _options: Object,
-    inspect: (input: any) => string
+    inspect: (input: any) => string,
   ) {
     const { tag, value } = this.inner;
 
