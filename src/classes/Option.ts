@@ -62,8 +62,8 @@ export class Option<T> {
 
   [Symbol.for("nodejs.util.inspect.custom")](
     _depth: number,
-    _options: Object,
-    inspect: (input: any) => string,
+    _options: unknown,
+    inspect: (input: unknown) => string,
   ) {
     const { tag, value } = this.inner;
 
