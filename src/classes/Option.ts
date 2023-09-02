@@ -71,7 +71,7 @@ export class Option<T> {
   ) {
     const { tag, value } = this.#inner;
 
-    return `${tag === "some" ? "Some" : "None"}(${inspect(value)})`;
+    return tag === "some" ? `Some(${inspect(value)})` : "None";
   }
 
   [Symbol.toStringTag]() {
