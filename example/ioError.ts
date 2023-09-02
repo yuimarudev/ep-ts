@@ -1,4 +1,4 @@
-import { Result, Err, Ok } from "ep-ts";
+import { Result, Err, Ok } from "ts-empower";
 import { readFile } from "node:fs/promises";
 
 class IOError extends Error {

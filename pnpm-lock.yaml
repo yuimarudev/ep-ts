@@ -39,7 +39,7 @@ devDependencies:
   prettier:
     specifier: ^3.0.3
     version: 3.0.3
-  ep-ts:
+  ts-empower:
     specifier: file:dist
     version: file:dist
   tslib:
@@ -2060,5 +2060,5 @@ packages:
 
   file:dist:
     resolution: {directory: dist, type: directory}
-    name: ep-ts
+    name: ts-empower
     dev: true
