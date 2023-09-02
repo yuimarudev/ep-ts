@@ -141,7 +141,7 @@ export class Result<T, E> {
     return `${tag === "ok" ? "Ok" : "Err"}(${inspect(value)})`;
   }
 
-  [Symbol.toStringTag]() {
+  get [Symbol.toStringTag]() {
     return this.#inner.tag === "ok" ? "Ok" : "Err";
   }
 }

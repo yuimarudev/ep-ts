@@ -74,7 +74,7 @@ export class Option<T> {
     return tag === "some" ? `Some(${inspect(value)})` : "None";
   }
 
-  [Symbol.toStringTag]() {
+  get [Symbol.toStringTag]() {
     return this.#inner.tag === "some" ? "Some" : "None";
   }
 }
