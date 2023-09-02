@@ -1,5 +1,5 @@
 import bind from "../decorators/bind";
-import panic from "../functions/panic";
+import { panic } from "../functions/panic";
 import { Option, None, Some } from "./Option";
 
 type ResultInner<T, E> = OkInner<T> | ErrInner<E>;
@@ -134,7 +134,7 @@ export class Result<T, E> {
   [Symbol.for("nodejs.util.inspect.custom")](
     _depth: number,
     _options: unknown,
-    inspect: (input: unknown) => string,
+    inspect: (input: unknown) => string
   ) {
     const { tag, value } = this.#inner;
 
