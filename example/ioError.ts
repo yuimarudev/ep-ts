@@ -1,4 +1,4 @@
-import { Result, Err, Ok } from "rust-daisuki-lib";
+import { Result, Err, Ok } from "ep-ts";
 import { readFile } from "node:fs/promises";
 
 class IOError extends Error {

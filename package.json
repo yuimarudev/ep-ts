@@ -1,5 +1,5 @@
 {
-  "name": "rust-daisuki-lib",
+  "name": "ep-ts",
   "version": "1.0.0",
   "description": "Rust saikyo!",
   "main": "dist/index.js",
@@ -20,7 +20,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.28.1",
     "prettier": "^3.0.3",
-    "rust-daisuki-lib": "file:dist",
+    "ep-ts": "file:dist",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2"
   },
