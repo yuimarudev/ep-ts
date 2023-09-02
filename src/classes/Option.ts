@@ -14,7 +14,11 @@ interface NoneInner {
 }
 
 export class Option<T> {
-  private constructor(private inner: OptionInner<T>) {}
+  #inner: OptionInner<T>;
+
+  private constructor(inner: OptionInner<T>) {
+    this.#inner = inner;
+  }
 
   @bind
   static Some<T>(value: T) {
@@ -28,16 +32,16 @@ export class Option<T> {
 
   @bind
   isSome() {
-    return this.inner.tag === "some";
+    return this.#inner.tag === "some";
   }
 
   @bind
   isNone() {
-    return this.inner.tag === "none";
+    return this.#inner.tag === "none";
   }
 
   *[Symbol.iterator]() {
-    const { tag, value } = this.inner;
+    const { tag, value } = this.#inner;
 
     if (tag === "some") {
       yield Some(value);
@@ -46,8 +50,8 @@ export class Option<T> {
 
   @bind
   unwrap(): T {
-    if (this.inner.tag === "some") {
-      return this.inner.value;
+    if (this.#inner.tag === "some") {
+      return this.#inner.value;
     } else {
       panic(new Error("Unwrap failed"));
     }
@@ -55,7 +59,7 @@ export class Option<T> {
 
   @bind
   except(msg: string): T {
-    if (this.inner.tag === "some") return this.inner.value;
+    if (this.#inner.tag === "some") return this.#inner.value;
 
     panic(new Error(msg));
   }
@@ -65,13 +69,13 @@ export class Option<T> {
     _options: unknown,
     inspect: (input: unknown) => string,
   ) {
-    const { tag, value } = this.inner;
+    const { tag, value } = this.#inner;
 
     return `${tag === "some" ? "Some" : "None"}(${inspect(value)})`;
   }
 
   [Symbol.toStringTag]() {
-    return this.inner.tag === "some" ? "Some" : "None";
+    return this.#inner.tag === "some" ? "Some" : "None";
   }
 }
 

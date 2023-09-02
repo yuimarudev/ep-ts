@@ -15,7 +15,11 @@ interface ErrInner<E> {
 }
 
 export class Result<T, E> {
-  private constructor(private inner: ResultInner<T, E>) {}
+  #inner: ResultInner<T, E>;
+
+  private constructor(inner: ResultInner<T, E>) {
+    this.#inner = inner;
+  }
 
   @bind
   static Ok<T>(value: T): Result<T, never> {
@@ -29,7 +33,7 @@ export class Result<T, E> {
 
   @bind
   match<R1, R2>({ ok, err }: { ok(value: T): R1; err(value: E): R2 }): R1 | R2 {
-    const { tag, value } = this.inner;
+    const { tag, value } = this.#inner;
 
     switch (tag) {
       case "ok":
@@ -41,24 +45,24 @@ export class Result<T, E> {
 
   @bind
   isOk() {
-    return this.inner.tag === "ok";
+    return this.#inner.tag === "ok";
   }
 
   @bind
   isErr() {
-    return this.inner.tag === "err";
+    return this.#inner.tag === "err";
   }
 
   @bind
   ok(): Option<T> {
-    const { tag, value } = this.inner;
+    const { tag, value } = this.#inner;
 
     return tag === "ok" ? Some(value) : None();
   }
 
   @bind
   err(): Option<E> {
-    const { tag, value } = this.inner;
+    const { tag, value } = this.#inner;
 
     return tag === "err" ? Some(value) : None();
   }
@@ -100,7 +104,7 @@ export class Result<T, E> {
   }
 
   *[Symbol.iterator]() {
-    const { tag, value } = this.inner;
+    const { tag, value } = this.#inner;
 
     if (tag === "ok") {
       yield Some(value);
@@ -111,7 +115,7 @@ export class Result<T, E> {
 
   @bind
   unwrap(): T {
-    const { tag, value } = this.inner;
+    const { tag, value } = this.#inner;
 
     if (tag === "ok") return value;
 
@@ -120,7 +124,7 @@ export class Result<T, E> {
 
   @bind
   unwrapErr(): E {
-    const { tag, value } = this.inner;
+    const { tag, value } = this.#inner;
 
     if (tag === "err") return value;
 
@@ -132,13 +136,13 @@ export class Result<T, E> {
     _options: unknown,
     inspect: (input: unknown) => string,
   ) {
-    const { tag, value } = this.inner;
+    const { tag, value } = this.#inner;
 
     return `${tag === "ok" ? "Ok" : "Err"}(${inspect(value)})`;
   }
 
   [Symbol.toStringTag]() {
-    return this.inner.tag === "ok" ? "Ok" : "Err";
+    return this.#inner.tag === "ok" ? "Ok" : "Err";
   }
 }
 
