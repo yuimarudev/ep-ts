@@ -5,6 +5,5 @@ await build({
   format: "esm",
   platform: "neutral",
   outfile: "dist/index.js",
-  bundle: true,
   sourcemap: "linked",
 });
