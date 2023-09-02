@@ -7,8 +7,4 @@ await build({
   outfile: "dist/index.js",
   bundle: true,
   sourcemap: "linked",
-  minify: true,
-  minifyIdentifiers: true,
-  minifySyntax: true,
-  minifyWhitespace: true,
 });
