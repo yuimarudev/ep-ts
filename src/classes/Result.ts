@@ -142,11 +142,5 @@ export class Result<T, E> {
   }
 }
 
-Object.defineProperty(Result.prototype, "inner", {
-  enumerable: false,
-  writable: true,
-  configurable: true,
-});
-
 export const Ok = Result.Ok;
 export const Err = Result.Err;
