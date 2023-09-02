@@ -13,6 +13,7 @@ const nodePanic: panicHandler = (error) => {
 const browserPanic: panicHandler = (error) => {
   console.error(error);
 
+  /* eslint-disable-next-line */
   while (true);
 };
 
