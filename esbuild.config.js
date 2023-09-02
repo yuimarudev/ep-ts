@@ -6,5 +6,9 @@ await build({
   platform: "neutral",
   outfile: "dist/index.js",
   bundle: true,
-  sourcemap: "both"
+  sourcemap: "linked",
+  minify: true,
+  minifyIdentifiers: true,
+  minifySyntax: true,
+  minifyWhitespace: true,
 });
