@@ -1,9 +1,9 @@
 import { build } from "esbuild";
 
 await build({
-  entryPoints: ["src/index.ts"],
+  entryPoints: ["src/**/*"],
   format: "esm",
   platform: "neutral",
-  outfile: "dist/index.js",
-  sourcemap: "linked",
+  outdir: "dist/",
+  sourcemap: "linked"
 });

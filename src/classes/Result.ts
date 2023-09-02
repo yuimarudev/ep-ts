@@ -1,6 +1,6 @@
-import bind from "../decorators/bind";
-import { panic } from "../functions/panic";
-import { Option, None, Some } from "./Option";
+import bind from "../decorators/bind.js";
+import { panic } from "../functions/panic.js";
+import { Option, None, Some } from "./Option.js";
 
 type ResultInner<T, E> = OkInner<T> | ErrInner<E>;
 

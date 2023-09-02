@@ -1,4 +1,4 @@
-import { type Result, Ok, Err } from "../classes/Result";
+import { type Result, Ok, Err } from "../classes/Result.js";
 
 export function toResult<R, E extends Error>(execute: () => R): Result<R, E> {
   let value: Result<R, E>;

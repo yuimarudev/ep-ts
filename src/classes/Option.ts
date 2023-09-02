@@ -1,5 +1,5 @@
-import bind from "../decorators/bind";
-import { panic } from "../functions/panic";
+import bind from "../decorators/bind.js";
+import { panic } from "../functions/panic.js";
 
 type OptionInner<T> = SomeInner<T> | NoneInner;
 
