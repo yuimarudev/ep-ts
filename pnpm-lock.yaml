@@ -9,6 +9,11 @@ patchedDependencies:
     hash: ir2jn74zazstd2dce4pge7exqa
     path: patches/@swc-node__register@1.6.7.patch
 
+dependencies:
+  '@types/node':
+    specifier: ^20.5.8
+    version: 20.5.8
+
 devDependencies:
   '@swc-node/register':
     specifier: ^1.6.7
@@ -487,6 +492,10 @@ packages:
   /@types/json5@0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
+
+  /@types/node@20.5.8:
+    resolution: {integrity: sha512-eajsR9aeljqNhK028VG0Wuw+OaY5LLxYmxeoXynIoE6jannr9/Ucd1LL0hSSoafk5LTYG+FfqsyGt81Q6Zkybw==}
+    dev: false
 
   /@types/semver@7.5.1:
     resolution: {integrity: sha512-cJRQXpObxfNKkFAZbJl2yjWtJCqELQIdShsogr1d2MilP8dKD9TE/nEKHkJgUNHdGKCQaf9HbIynuV2csLGVLg==}
