@@ -41,8 +41,6 @@ export class Option<T> {
     
     if (tag === "some") {
       yield Some(value);
-    } else {
-      yield None();
     }
   }
 
