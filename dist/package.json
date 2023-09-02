@@ -1,5 +1,5 @@
 {
-  "name": "ep-ts",
+  "name": "ts-empower",
   "version": "1.0.0",
   "description": "Rust saikyo!",
   "main": "./index.js",
