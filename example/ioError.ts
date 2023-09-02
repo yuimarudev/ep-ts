@@ -24,3 +24,6 @@ const none = await readToString("./adapodskopaskdopaskodpaojqwoejer0qw9");
 console.log("isOk", script.isOk(), none.isOk());
 console.log("unwrap", JSON.parse(script.unwrap()).name);
 console.log("inner", none);
+
+// process ends with code 1
+none.unwrap();
