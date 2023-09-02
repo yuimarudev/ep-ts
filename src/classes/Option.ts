@@ -78,6 +78,7 @@ export class Option<T> {
 Object.defineProperty(Option.prototype, "inner", {
   enumerable: false,
   writable: true,
+  configurable: true,
 });
 
 export const Some = Option.Some;
